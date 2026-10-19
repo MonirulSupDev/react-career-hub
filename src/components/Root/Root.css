@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../../assets/fonts/Manrope-VariableFont_wght.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+  --color-dark-1: #1a1919;
+  --color-dark-2: #474747;
+  --color-dark-3: #757575;
+  --color-dark-7: #f4f4f4;
+}
+
+@layer base {
+  body {
+    @apply font-manrope text-base;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-linear-90 from-blue-500 to-violet-500;
+  }
+  .gradient-text {
+    @apply bg-linear-90 from-blue-500 to-violet-500 bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent];
+  }
+  .social-icon {
+    @apply size-10.5 bg-white rounded-full flex items-center justify-center border-2 border-transparent hover:border-blue-600 hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 transition-all;
+  }
+  .menu-horizontal a.active,
+  .menu-sm a.active {
+    @apply font-bold bg-linear-90 from-blue-500 to-violet-500 bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent];
+  }
+  .gradient-btn {
+    @apply px-5 py-2 text-base font-bold border border-transparent rounded-sm
+         [background:linear-gradient(#fff,#fff)_padding-box,linear-gradient(135deg,#3b82f6,#4f46e5)_border-box]
+         transition-[transform,box-shadow] duration-150;
+  }
+}
