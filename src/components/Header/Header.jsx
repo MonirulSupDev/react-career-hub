@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import logo from "../../assets/images/logos/careerhub-logo-172x44.png";
 
 const Header = () => {
@@ -59,9 +59,12 @@ const Header = () => {
         <ul className="menu-horizontal gap-10 font-medium px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-linear-90 from-blue-500 to-violet-500 font-medium xl:font-bold text-xs md:text-lg xl:text-xl text-white px-3 md:px-4 xl:px-5.75 md:py-6 xl:py-[31.5px] rounded-lg hover:bg-linear-180 hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 transition-all duration-300">
+        <Link
+          to="/#featured-jobs"
+          className="btn bg-linear-90 from-blue-500 to-violet-500 font-medium xl:font-bold text-xs md:text-lg xl:text-xl text-white px-3 md:px-4 xl:px-5.75 md:py-6 xl:py-[31.5px] rounded-lg hover:bg-linear-180 hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 transition-all duration-300"
+        >
           Start Applying
-        </a>
+        </Link>
       </div>
     </div>
   );

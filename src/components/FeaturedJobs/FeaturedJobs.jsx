@@ -11,7 +11,10 @@ const FeaturedJobs = () => {
 
   const [dataLength, setDataLength] = useState(4);
   return (
-    <div className="py-15 md:py-32.5 px-2 md:px-0">
+    <div
+      id="featured-jobs"
+      className="scroll-mt-24 py-15 md:py-32.5 px-2 md:px-0"
+    >
       <div className="text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-dark-1">
           Featured Jobs

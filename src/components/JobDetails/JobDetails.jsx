@@ -7,7 +7,11 @@ import { HiOutlinePhone } from "react-icons/hi2";
 import { MdOutlineMail } from "react-icons/md";
 import { VscLocation } from "react-icons/vsc";
 import { ToastContainer, toast } from "react-toastify";
-import { saveJobApplication } from "../../utility/localstorage";
+import {
+  getStoredJobApplication,
+  saveJobApplication,
+} from "../../utility/localstorage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -25,12 +29,21 @@ const JobDetails = () => {
   } = job;
 
   const handleApplyNow = () => {
+    const storedApplyJobs = getStoredJobApplication();
+    console.log(storedApplyJobs);
+    if (storedApplyJobs.includes(intId)) {
+      toast.info("You have applied for this job already!");
+      return;
+    }
     saveJobApplication(intId);
-    toast("You have applied successfully!");
+    toast.success("You have applied successfully!");
   };
 
   return (
     <div>
+      <Helmet>
+        <title>CareerHub | Job Details</title>
+      </Helmet>
       <div className="relative left-1/2 w-screen -translate-x-1/2 bg-sky-50 pt-54 pb-46">
         <div className="mx-auto max-w-330">
           <h2 className="text-center text-[32px] font-extrabold">

@@ -4,6 +4,7 @@ import { getStoredJobApplication } from "../../utility/localstorage";
 import shapeLeft from "../../assets/images/shapes/left-shape.png";
 import shapeRight from "../../assets/images/shapes/right-shape.png";
 import AppliedJob from "../AppliedJob/AppliedJob";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
@@ -39,6 +40,9 @@ const AppliedJobs = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>CareerHub | Applied Jobs</title>
+      </Helmet>
       <div className="relative left-1/2 w-screen -translate-x-1/2 bg-sky-50 pt-54 pb-46">
         <div className="mx-auto max-w-330">
           <h2 className="text-center text-[32px] font-extrabold">
@@ -57,7 +61,7 @@ const AppliedJobs = () => {
           <div class="relative inline-flex items-center rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-xs transition-all duration-300 hover:border-indigo-400">
             <select
               onChange={(e) => handleJobsFilter(e.target.value)}
-              class="cursor-pointer appearance-none bg-transparent pr-7 text-sm font-medium text-gray-700 outline-none"
+              className="cursor-pointer appearance-none bg-transparent pr-7 text-sm font-medium text-gray-700 outline-none"
               aria-label="Filter By"
               name="job-filter"
             >
@@ -78,7 +82,7 @@ const AppliedJobs = () => {
               stroke-width="2"
             >
               <path
-                stroke-linecap="round"
+                strokeLinecap="round"
                 stroke-linejoin="round"
                 d="m19 9-7 7-7-7"
               />

@@ -1,5 +1,5 @@
 import "./Root.css";
-import { Outlet } from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
@@ -11,6 +11,7 @@ const Root = () => {
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
+      <ScrollRestoration />
     </div>
   );
 };

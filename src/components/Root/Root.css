@@ -18,6 +18,10 @@
 }
 
 @layer base {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-manrope text-base;
   }
